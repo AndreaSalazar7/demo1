@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Inicio - Bienvenidos
+{% endblock %}
+
+{% block content %}
+	<font size="9" color="purple" face="Comic Sans MS">Bienvenidos a mi cat&aacute;logo de belleza</font><p><p>
+	<font size="6" color="purple" face="Comic Sans Ms">En este cat&aacute;logo virtual encontraras productos de muy buena calidad y a un incre&iacute;ble precio.<p>
+		Te invitamos a que conozcas nuestros productos.</font>
+	{% if user.get_profile.photo %}
+		<img src="/media/{{ user.get_profile.photo }}" width = "100px" heigth = "100px"/>
+	{% endif %}
+	{% if user.get_profile.telefono %}
+		<p>Numero Telefonico : {{ user.get_profile.telefono }}</p>
+	{% endif %}
+{% endblock %}
